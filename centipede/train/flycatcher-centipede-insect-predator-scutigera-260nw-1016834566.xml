@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>flycatcher-centipede-insect-predator-scutigera-260nw-1016834566.jpg</filename>
+	<path>/home/batfolx/PycharmProjects/bug_detector/images/centipede/train/flycatcher-centipede-insect-predator-scutigera-260nw-1016834566.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>390</width>
+		<height>280</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>centipede</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>61</xmin>
+			<ymin>18</ymin>
+			<xmax>390</xmax>
+			<ymax>220</ymax>
+		</bndbox>
+	</object>
+</annotation>

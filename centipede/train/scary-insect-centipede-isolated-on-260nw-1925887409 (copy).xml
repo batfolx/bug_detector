@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>scary-insect-centipede-isolated-on-260nw-1925887409 (copy).jpg</filename>
+	<path>/home/batfolx/PycharmProjects/bug_detector/images/centipede/train/scary-insect-centipede-isolated-on-260nw-1925887409 (copy).jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>390</width>
+		<height>280</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>centipede</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>51</xmin>
+			<ymin>33</ymin>
+			<xmax>341</xmax>
+			<ymax>232</ymax>
+		</bndbox>
+	</object>
+</annotation>

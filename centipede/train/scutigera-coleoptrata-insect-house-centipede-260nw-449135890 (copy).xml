@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>scutigera-coleoptrata-insect-house-centipede-260nw-449135890 (copy).jpg</filename>
+	<path>/home/batfolx/PycharmProjects/bug_detector/images/centipede/train/scutigera-coleoptrata-insect-house-centipede-260nw-449135890 (copy).jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>347</width>
+		<height>280</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>centipede</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>29</xmin>
+			<ymin>26</ymin>
+			<xmax>322</xmax>
+			<ymax>247</ymax>
+		</bndbox>
+	</object>
+</annotation>

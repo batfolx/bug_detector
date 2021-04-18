@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>centipede-insect-260nw-383984.jpg</filename>
+	<path>/home/batfolx/PycharmProjects/bug_detector/images/centipede/test/centipede-insect-260nw-383984.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>391</width>
+		<height>280</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>centipede</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>14</xmin>
+			<ymin>43</ymin>
+			<xmax>353</xmax>
+			<ymax>233</ymax>
+		</bndbox>
+	</object>
+</annotation>

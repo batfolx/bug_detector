@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>centipede2.jpg</filename>
+	<path>/home/batfolx/PycharmProjects/bug_detector/images/centipede/test/centipede2.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>390</width>
+		<height>280</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>centipede</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>180</xmin>
+			<ymin>50</ymin>
+			<xmax>390</xmax>
+			<ymax>152</ymax>
+		</bndbox>
+	</object>
+</annotation>
