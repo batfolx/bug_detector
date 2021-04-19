@@ -12,7 +12,5 @@ RUN sudo pip3 install tf-models-official
 RUN mkdir /home/detector
 WORKDIR /home/detector
 COPY . .
-RUN export PYTHONPATH=$PYTHONPATH:tensor/models/
-RUN export PYTHONPATH=$PYTHONPATH:tensor/models/official
-RUN export PYTHONPATH=$PYTHONPATH:tensor/model/research/slim
-
+ENV PYTHONPATH=$PYTHONPATH:tensor/models/
+ENV PYTHONPATH=$PYTHONPATH:tensor/models/research

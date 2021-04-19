@@ -69,11 +69,11 @@ def load_image_into_numpy_array(path):
 
 category_index = label_map_util.create_category_index_from_labelmap("labelmap.pbtxt",
                                                                     use_display_name=True)
-for i, image_path in enumerate(os.listdir('centipede/test')):
+for i, image_path in enumerate(os.listdir('centipede/train')):
     print('Running inference for {}... '.format(image_path), end='')
     if image_path.endswith('xml'):
         continue
-    image_np = load_image_into_numpy_array(f'centipede/test/{image_path}')
+    image_np = load_image_into_numpy_array(f'centipede/train/{image_path}')
 
     # Things to try:
     # Flip horizontally
