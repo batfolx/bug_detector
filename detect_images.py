@@ -6,19 +6,18 @@ from object_detection.builders import model_builder
 import os
 import numpy as np
 from PIL import Image
-import matplotlib.pyplot as plt
-import warnings
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # Suppress TensorFlow logging (1)
-import pathlib
 import tensorflow as tf
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # Suppress TensorFlow logging (1)
 
 # Enable GPU dynamic memory allocation
 gpus = tf.config.experimental.list_physical_devices('GPU')
 for gpu in gpus:
     tf.config.experimental.set_memory_growth(gpu, True)
 
-PATH_TO_CFG = "models/lite_model/pipeline.config"
-PATH_TO_CKPT = "models/lite_model/ckpt-13"
+PATH_TO_CFG = "pretrained_models/ssd_resnet152_v1_fpn_640x640_coco17_tpu-8/pipeline.config"
+PATH_TO_CKPT = "pretrained_models/centipede_model/ckpt-28"
+PATH_TO_LABELMAP = "labelmap.pbtxt"
 print('Loading model... ', end='')
 start_time = time.time()
 
@@ -30,26 +29,8 @@ detection_model = model_builder.build(model_config=model_config, is_training=Fal
 # Restore checkpoint
 ckpt = tf.compat.v2.train.Checkpoint(model=detection_model)
 ckpt.restore(PATH_TO_CKPT).expect_partial()
-
-
-@tf.function
-def detect_fn(image):
-    """Detect objects in image."""
-
-    image, shapes = detection_model.preprocess(image)
-    prediction_dict = detection_model.predict(image, shapes)
-    detections = detection_model.postprocess(prediction_dict, shapes)
-
-    return detections
-
-
-end_time = time.time()
-elapsed_time = end_time - start_time
-print('Done! Took {} seconds'.format(elapsed_time))
-
-
-
-warnings.filterwarnings('ignore')  # Suppress Matplotlib warnings
+print(f'Done! that took {time.time() - start_time:.3f} seconds')
+category_index = label_map_util.create_category_index_from_labelmap(PATH_TO_LABELMAP, use_display_name=True)
 
 
 def load_image_into_numpy_array(path):
@@ -65,24 +46,23 @@ def load_image_into_numpy_array(path):
     Returns:
       uint8 numpy array with shape (img_height, img_width, 3)
     """
-    return np.array(Image.open(path))
+    ans = np.array(Image.open(path))
+    print(type(ans))
+    print(ans.shape)
+    return ans
 
-category_index = label_map_util.create_category_index_from_labelmap("labelmap.pbtxt",
-                                                                    use_display_name=True)
-for i, image_path in enumerate(os.listdir('centipede/test')):
-    print('Running inference for {}... '.format(image_path), end='')
-    if image_path.endswith('xml'):
-        continue
-    image_np = load_image_into_numpy_array(f'centipede/test/{image_path}')
 
-    # Things to try:
-    # Flip horizontally
-    # image_np = np.fliplr(image_np).copy()
+@tf.function
+def detect_fn(image):
+    """Detect objects in image."""
+    image, shapes = detection_model.preprocess(image)
+    prediction_dict = detection_model.predict(image, shapes)
+    detections = detection_model.postprocess(prediction_dict, shapes)
 
-    # Convert image to grayscale
-    # image_np = np.tile(
-    #     np.mean(image_np, 2, keepdims=True), (1, 1, 3)).astype(np.uint8)
+    return detections
 
+
+def detect_image(image_np):
     input_tensor = tf.convert_to_tensor(np.expand_dims(image_np, 0), dtype=tf.float32)
 
     detections = detect_fn(input_tensor)
@@ -112,7 +92,9 @@ for i, image_path in enumerate(os.listdir('centipede/test')):
         min_score_thresh=.30,
         agnostic_mode=False)
 
-    plt.figure()
-    plt.imsave(f'image{i}.jpg', image_np_with_detections)
-    print('Done')
-    plt.show()
+    # plt.figure()
+    # plt.imshow(image_np_with_detections)
+    # print('Done')
+    return image_np_with_detections
+
+# detect_image(load_image_into_numpy_array('centipede/test/centipede1.jpg'))
