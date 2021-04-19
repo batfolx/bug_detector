@@ -1,0 +1,26 @@
+<annotation>
+	<folder>additional</folder>
+	<filename>house-centipede-scutigera-coleoptrata-crawling-260nw-1851381160.jpg</filename>
+	<path>/home/victor/PycharmProjects/bug_detector/centipede/additional/house-centipede-scutigera-coleoptrata-crawling-260nw-1851381160.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>390</width>
+		<height>280</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>centipede</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>119</xmin>
+			<ymin>32</ymin>
+			<xmax>184</xmax>
+			<ymax>144</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>additional</folder>
+	<filename>closeup-shot-house-centipede-dark-underground-room-201900668.jpg</filename>
+	<path>/home/victor/PycharmProjects/bug_detector/centipede/additional/closeup-shot-house-centipede-dark-underground-room-201900668.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>800</width>
+		<height>536</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>centipede</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>221</xmin>
+			<ymin>160</ymin>
+			<xmax>492</xmax>
+			<ymax>409</ymax>
+		</bndbox>
+	</object>
+</annotation>

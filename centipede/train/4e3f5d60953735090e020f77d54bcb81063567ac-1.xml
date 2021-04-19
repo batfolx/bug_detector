@@ -1,0 +1,26 @@
+<annotation>
+	<folder>additional</folder>
+	<filename>4e3f5d60953735090e020f77d54bcb81063567ac-1.jpg</filename>
+	<path>/home/victor/PycharmProjects/bug_detector/centipede/additional/4e3f5d60953735090e020f77d54bcb81063567ac-1.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>250</width>
+		<height>250</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>centipede</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>28</xmin>
+			<ymin>2</ymin>
+			<xmax>235</xmax>
+			<ymax>217</ymax>
+		</bndbox>
+	</object>
+</annotation>

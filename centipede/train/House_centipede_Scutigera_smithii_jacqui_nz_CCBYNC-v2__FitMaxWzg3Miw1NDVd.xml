@@ -1,0 +1,26 @@
+<annotation>
+	<folder>additional</folder>
+	<filename>House_centipede_Scutigera_smithii_jacqui_nz_CCBYNC-v2__FitMaxWzg3Miw1NDVd.jpg</filename>
+	<path>/home/victor/PycharmProjects/bug_detector/centipede/additional/House_centipede_Scutigera_smithii_jacqui_nz_CCBYNC-v2__FitMaxWzg3Miw1NDVd.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>872</width>
+		<height>449</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>centipede</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>236</xmin>
+			<ymin>50</ymin>
+			<xmax>870</xmax>
+			<ymax>349</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -17,8 +17,8 @@ gpus = tf.config.experimental.list_physical_devices('GPU')
 for gpu in gpus:
     tf.config.experimental.set_memory_growth(gpu, True)
 
-PATH_TO_CFG = "models/centipede_model/pipeline.config"
-PATH_TO_CKPT = "models/centipede_model/ckpt-28"
+PATH_TO_CFG = "models/lite_model/pipeline.config"
+PATH_TO_CKPT = "models/lite_model/ckpt-13"
 print('Loading model... ', end='')
 start_time = time.time()
 
@@ -69,11 +69,11 @@ def load_image_into_numpy_array(path):
 
 category_index = label_map_util.create_category_index_from_labelmap("labelmap.pbtxt",
                                                                     use_display_name=True)
-for i, image_path in enumerate(os.listdir('centipede/train')):
+for i, image_path in enumerate(os.listdir('centipede/test')):
     print('Running inference for {}... '.format(image_path), end='')
     if image_path.endswith('xml'):
         continue
-    image_np = load_image_into_numpy_array(f'centipede/train/{image_path}')
+    image_np = load_image_into_numpy_array(f'centipede/test/{image_path}')
 
     # Things to try:
     # Flip horizontally

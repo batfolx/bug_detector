@@ -1,0 +1,26 @@
+<annotation>
+	<folder>additional</folder>
+	<filename>ndmshfwtbh521.jpg</filename>
+	<path>/home/victor/PycharmProjects/bug_detector/centipede/additional/ndmshfwtbh521.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4032</width>
+		<height>3024</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>centipede</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1039</xmin>
+			<ymin>413</ymin>
+			<xmax>2821</xmax>
+			<ymax>2228</ymax>
+		</bndbox>
+	</object>
+</annotation>
