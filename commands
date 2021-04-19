@@ -1,5 +1,9 @@
-export PYTHONPATH=$PYTHONPATH:../models/research
+export PYTHONPATH=$PYTHONPATH:tensor/models
+export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 
 
 pip install tensorflow-object-detection-api
 protoc object_detection/protos/*.proto --python_out=.
+
+
+python3 model_main_tf2.py --model_dir=models/centipede_model/ --pipeline_config_path=models/centipede_model/pipeline.config

@@ -17,8 +17,8 @@ gpus = tf.config.experimental.list_physical_devices('GPU')
 for gpu in gpus:
     tf.config.experimental.set_memory_growth(gpu, True)
 
-PATH_TO_CFG = "trained_models/my_ssd_resnet50/pipeline.config"
-PATH_TO_CKPT = "trained_models/my_ssd_resnet50/ckpt-26"
+PATH_TO_CFG = "models/centipede_model/pipeline.config"
+PATH_TO_CKPT = "models/centipede_model/ckpt-28"
 print('Loading model... ', end='')
 start_time = time.time()
 
