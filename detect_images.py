@@ -16,7 +16,7 @@ for gpu in gpus:
     tf.config.experimental.set_memory_growth(gpu, True)
 
 PATH_TO_CFG = "pretrained_models/ssd_resnet152_v1_fpn_640x640_coco17_tpu-8/pipeline.config"
-PATH_TO_CKPT = "pretrained_models/centipede_model/ckpt-28"
+PATH_TO_CKPT = "pretrained_models/ssd_resnet152_v1_fpn_640x640_coco17_tpu-8/checkpoint/ckpt-0"
 PATH_TO_LABELMAP = "labelmap.pbtxt"
 print('Loading model... ', end='')
 start_time = time.time()
@@ -79,10 +79,10 @@ def detect_image(image_np):
     detections['detection_classes'] = detections['detection_classes'].astype(np.int64)
 
     label_id_offset = 1
-    image_np_with_detections = image_np.copy()
+    #image_np_with_detections = image_np.copy()
 
     viz_utils.visualize_boxes_and_labels_on_image_array(
-        image_np_with_detections,
+        image_np,
         detections['detection_boxes'],
         detections['detection_classes'] + label_id_offset,
         detections['detection_scores'],
@@ -95,6 +95,4 @@ def detect_image(image_np):
     # plt.figure()
     # plt.imshow(image_np_with_detections)
     # print('Done')
-    return image_np_with_detections
-
-# detect_image(load_image_into_numpy_array('centipede/test/centipede1.jpg'))
+    return image_np
