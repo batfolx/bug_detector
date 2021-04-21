@@ -17,3 +17,4 @@ def detect_webcam():
 
     cv2.destroyAllWindows()
     capture.release()
+
