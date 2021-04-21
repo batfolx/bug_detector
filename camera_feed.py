@@ -9,7 +9,6 @@ def detect_webcam():
         ret, frame = capture.read()
         if not ret:
             continue
-
         frame_boxes = detect_images.detect_image(frame)
         cv2.imshow('Feed', frame_boxes)
         if cv2.waitKey(1) & ord('q') == 0xFF:
