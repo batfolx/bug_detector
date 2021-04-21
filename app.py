@@ -20,7 +20,7 @@ def detect():
     # convert uploaded file into PIL image to transform to NumPy array
     image = Image.open(file.stream)
     image_np_labels = detect_image(np.asarray(image).copy())
-    filename = f'/tmp/{file.filename}'
+    filename = f'tmp/{file.filename}'
 
     # save image to file system to send back to client
     Image.fromarray(image_np_labels).save(filename)

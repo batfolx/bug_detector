@@ -15,8 +15,8 @@ gpus = tf.config.experimental.list_physical_devices('GPU')
 for gpu in gpus:
     tf.config.experimental.set_memory_growth(gpu, True)
 
-PATH_TO_CFG = "pretrained_models/ssd_resnet152_v1_fpn_640x640_coco17_tpu-8/pipeline.config"
-PATH_TO_CKPT = "pretrained_models/ssd_resnet152_v1_fpn_640x640_coco17_tpu-8/checkpoint/ckpt-0"
+PATH_TO_CFG = "models/centipede_model2/pipeline.config"
+PATH_TO_CKPT = "models/centipede_model2/ckpt-6"
 PATH_TO_LABELMAP = "labelmap.pbtxt"
 print('Loading model... ', end='')
 start_time = time.time()
