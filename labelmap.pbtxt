@@ -2,3 +2,8 @@ item {
     id: 1
     name: 'centipede'
 }
+
+item {
+    id: 2
+    name: 'camel cricket'
+}

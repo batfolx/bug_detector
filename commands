@@ -8,3 +8,5 @@ protoc object_detection/protos/*.proto --python_out=.
 
 
 python3 model_main_tf2.py --model_dir=models/centipede_model/ --pipeline_config_path=models/centipede_model/pipeline.config
+
+python3 xml_to_record.py -o centipede/train.record -l labelmap.pbtxt -x centipede/train/
