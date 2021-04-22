@@ -15,8 +15,8 @@ gpus = tf.config.experimental.list_physical_devices('GPU')
 for gpu in gpus:
     tf.config.experimental.set_memory_growth(gpu, True)
 
-PATH_TO_CFG = "models/centipede_model2/pipeline.config"
-PATH_TO_CKPT = "models/centipede_model2/ckpt-6"
+PATH_TO_CFG = "models/centipede_model/pipeline.config"
+PATH_TO_CKPT = "models/centipede_model/ckpt-23"
 PATH_TO_LABELMAP = "labelmap.pbtxt"
 print('Loading model... ', end='')
 start_time = time.time()
@@ -35,14 +35,11 @@ category_index = label_map_util.create_category_index_from_labelmap(PATH_TO_LABE
 
 def load_image_into_numpy_array(path):
     """Load an image from file into a numpy array.
-
     Puts image into numpy array to feed into tensorflow graph.
     Note that by convention we put it into a numpy array with shape
     (height, width, channels), where channels=3 for RGB.
-
     Args:
       path: the file path to the image
-
     Returns:
       uint8 numpy array with shape (img_height, img_width, 3)
     """

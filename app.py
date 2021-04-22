@@ -11,6 +11,8 @@ app = Flask(__name__)
 
 @app.route('/detect', methods=['POST'])
 def detect():
+    print(request.headers)
+    print(request.files)
     if 'file' not in request.files:
         return Response("{'error': 'No file specified'}", status=201, mimetype='application/json')
     file = request.files['file']
