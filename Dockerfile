@@ -13,6 +13,8 @@ RUN mkdir /home/detector
 WORKDIR /home/detector
 COPY . .
 ENV PYTHONPATH=$PYTHONPATH:tensor/models/
+
+
 ENV PYTHONPATH=$PYTHONPATH:tensor/models/research
 ENV MODEL_PORT=12000
 EXPOSE 12000
